@@ -1,6 +1,9 @@
 namespace Fishbowl
 {
-    public Asset[] assets;
+    public Asset[] assetsToPlace;
+
+    public Asset[] assetsInBowl;
+
 
     public class Asset() {
 
@@ -10,6 +13,7 @@ namespace Fishbowl
         int id;
         string type;
         bool unlocked;
+        bool placed;
 
         public Asset(string name_, string model_, int amount_, string type_) {
             this.name = name_;
@@ -17,7 +21,8 @@ namespace Fishbowl
             this.amount = amount_;
             this.id = GetNextID();
             this.type = type_;
-            unlocked = false;
+            this.unlocked = false;
+            this.placed = false;
             
         }
 
@@ -26,8 +31,21 @@ namespace Fishbowl
         }
 
         public void place() {
+           
             //Hier kommt die Funktion rein, um ein Asset in der Fishbowl abzulegen
-            assets.add(this);
+            if(this.unlocked) {
+                if(this.placed) {
+                    this.placed = true;
+                    assetsInBowl.add(this);
+                }
+                else {
+                    continue;
+                }
+            }
+            else {
+                //Meldung an User ausgeben, dass Asset noch gesperrt ist
+            }
+           
         }
     }
 }
