@@ -19,8 +19,12 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
-            transform.position += moveSpeed * new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            transform.position += moveSpeed * new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            transform.position -= moveSpeed * new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") != 0) {
