@@ -6,6 +6,7 @@ public class HotbarVisibility : MonoBehaviour
 {
 
     public GameObject button;
+    public GameObject cross;
 
     CanvasGroup canvasGroup;
 
@@ -13,12 +14,14 @@ public class HotbarVisibility : MonoBehaviour
     void Start()
     {
         button = GameObject.Find("DropdownButton");
+        cross = GameObject.Find("CloseButton");
 
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
 
+        cross.SetActive(false);
     }
 
     public void OnDropdown() 
@@ -30,6 +33,7 @@ public class HotbarVisibility : MonoBehaviour
             canvasGroup.alpha = 1;
 
             button.SetActive(false);
+            cross.SetActive(true);
         }
     }
 
@@ -42,6 +46,7 @@ public class HotbarVisibility : MonoBehaviour
             canvasGroup.blocksRaycasts = false;
 
             button.SetActive(true);
+            cross.SetActive(false);
         }
     }
 }

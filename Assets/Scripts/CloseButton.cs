@@ -5,7 +5,7 @@ using Unity;
 using Unity.VisualScripting;
 using UnityEngine;
     
-public class dropdownbutton : MonoBehaviour
+public class CloseButton : MonoBehaviour
 {
 
     GameObject hotbar;
@@ -16,11 +16,11 @@ public class dropdownbutton : MonoBehaviour
     {
         hotbar = GameObject.Find("Hotbar");
         visibility = hotbar.GetComponent<HotbarVisibility>();
+        //gameObject.SetActive(false);
     }
 
-    public void OnPointerClick()
-    { 
-        visibility.OnDropdown();
+    public void OnClick() 
+    {
+        visibility.EndDropdown();
     }
-
 }
