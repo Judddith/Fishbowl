@@ -2351,7 +2351,6 @@ GameObject:
   - component: {fileID: 959639792}
   - component: {fileID: 959639796}
   - component: {fileID: 959639795}
-  - component: {fileID: 959639794}
   - component: {fileID: 959639793}
   m_Layer: 5
   m_Name: CloseButton
@@ -2435,18 +2434,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &959639794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959639791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 965004267dc5e204da4eb2e48cbfa7f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &959639795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,7 +2705,6 @@ GameObject:
   - component: {fileID: 1202690886}
   - component: {fileID: 1202690888}
   - component: {fileID: 1202690887}
-  - component: {fileID: 1202690890}
   - component: {fileID: 1202690889}
   m_Layer: 5
   m_Name: DropdownButton
@@ -2840,18 +2826,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1202690890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202690885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd30a5f5ef45ba4e85c91ea3728bf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1211890272
 GameObject:
   m_ObjectHideFlags: 0
