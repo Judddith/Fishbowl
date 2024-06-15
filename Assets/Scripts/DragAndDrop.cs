@@ -3,20 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour//, IDragHandler, IEndDragHandler
+public class DragAndDrop : MonoBehaviour
 {
     Vector3 mousePosition;
 
-  /*  public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = Input.mousePosition;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        
-    }*/
-
+    
     private Vector3 GetMousePosition() 
     {
         return Camera.main.WorldToScreenPoint(transform.position);
