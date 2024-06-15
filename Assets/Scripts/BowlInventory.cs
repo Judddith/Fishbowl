@@ -23,6 +23,7 @@ public class BowlInventory : MonoBehaviour
                 item.OnPlacement();
 
                 ItemAdded?.Invoke(this, new InventoryEventArgs(item));
+                
             }
         }
     }
