@@ -9,6 +9,9 @@ public class HotbarVisibility : MonoBehaviour
     public GameObject cross;
 
     CanvasGroup canvasGroup;
+    CanvasGroup toolbarGroup;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,7 @@ public class HotbarVisibility : MonoBehaviour
         button = GameObject.Find("DropdownButton");
         cross = GameObject.Find("CloseButton");
 
+        toolbarGroup = GameObject.Find("Toolbar").GetComponent<CanvasGroup>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
@@ -32,6 +36,10 @@ public class HotbarVisibility : MonoBehaviour
             canvasGroup.blocksRaycasts = true;
             canvasGroup.alpha = 1;
 
+            toolbarGroup.interactable = false;
+            toolbarGroup.blocksRaycasts = false;
+            toolbarGroup.alpha = 0;
+
             button.SetActive(false);
             cross.SetActive(true);
         }
@@ -44,6 +52,10 @@ public class HotbarVisibility : MonoBehaviour
             canvasGroup.alpha = 0;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+
+            toolbarGroup.alpha = 1;
+            toolbarGroup.interactable = true;
+            toolbarGroup.blocksRaycasts = true;
 
             button.SetActive(true);
             cross.SetActive(false);
