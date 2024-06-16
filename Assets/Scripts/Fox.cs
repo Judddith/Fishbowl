@@ -25,8 +25,12 @@ public class Fox : MonoBehaviour, IInventoryItem
 
     public void OnPlacement()
     {
-        //Not yet important
-        //gameObject.SetActive(true);
+        RaycastHit hit = new RaycastHit();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit, 1000))
+        {
+            Debug.Log("Item has been placed");
+        }
     }
 
 }
