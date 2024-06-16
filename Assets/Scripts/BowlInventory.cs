@@ -13,6 +13,7 @@ public class BowlInventory : MonoBehaviour
     {
         if (!itemsInBowl.Contains(item)) 
         {
+            //Function to add an Item to the Bowl inventory
             Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
             if (collider.enabled)
             {

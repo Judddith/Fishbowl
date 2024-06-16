@@ -1,24 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class HUD : MonoBehaviour
+public class Toolbar : MonoBehaviour
 {
-
-    public BowlInventory BowlInventory;
-
+    public UserInventory UserInventory;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        BowlInventory.ItemAdded += Inventory_ItemAdded;
+        UserInventory.AddedToInventory += Item_Added;
+
     }
 
-    private void Inventory_ItemAdded(object sender, InventoryEventArgs e)
+    private void Item_Added(object sender, InventoryEventArgs e)
     {
-        //Checking for an empty panel to add the asset to the Bowl Inventory
-        Transform inventoryPanel = transform.Find("Hotbar");
+        //Checking for an empty panel to add the asset to the Inventory
+        Transform inventoryPanel = transform.Find("Toolbar");
         foreach(Transform slot in inventoryPanel)
         {
             //Accurately setting the Sprite for the visual representation
@@ -35,7 +34,6 @@ public class HUD : MonoBehaviour
             }
         }
     }
-
 
     // Update is called once per frame
     void Update()
