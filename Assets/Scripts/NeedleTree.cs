@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fox : MonoBehaviour, IInventoryItem
+public class NeedleTree : MonoBehaviour, IInventoryItem
 {
-    GameObject ObjectFox;
+    GameObject ObjectNeedle;
 
     public string Name 
     { 
         get
         {
-            return "Fox";
+            return "NeedleTree";
         }
     }
 
@@ -26,11 +26,9 @@ public class Fox : MonoBehaviour, IInventoryItem
 
     public void OnPlacement()
     {
-        
-        ObjectFox.SetActive(true);
+        ObjectNeedle.SetActive(true);
     }
 
-    
     GameObject UserInv;
 
     void Start()
@@ -38,7 +36,7 @@ public class Fox : MonoBehaviour, IInventoryItem
         UserInv = GameObject.Find("UserInventory");
         UserInv.GetComponent<UserInventory>().AddToInventory(this);
 
-        ObjectFox = GameObject.Find("Fox");
+        ObjectNeedle = GameObject.Find("NeedleTree");
     }
 
 }

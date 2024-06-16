@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fox : MonoBehaviour, IInventoryItem
+public class GiantWorm : MonoBehaviour, IInventoryItem
 {
-    GameObject ObjectFox;
+    GameObject ObjectWorm;
 
     public string Name 
     { 
         get
         {
-            return "Fox";
+            return "GiantWorm";
         }
     }
 
@@ -26,11 +26,10 @@ public class Fox : MonoBehaviour, IInventoryItem
 
     public void OnPlacement()
     {
-        
-        ObjectFox.SetActive(true);
+        Debug.Log("Badischer Riesenregenwurm");
+        ObjectWorm.SetActive(true);
     }
 
-    
     GameObject UserInv;
 
     void Start()
@@ -38,7 +37,7 @@ public class Fox : MonoBehaviour, IInventoryItem
         UserInv = GameObject.Find("UserInventory");
         UserInv.GetComponent<UserInventory>().AddToInventory(this);
 
-        ObjectFox = GameObject.Find("Fox");
+        ObjectWorm = GameObject.Find("GiantWorm");
     }
 
 }

@@ -6,18 +6,13 @@ using UnityEngine;
 public class UserInventory : MonoBehaviour
 {
 
-    private List<IInventoryItem> inventoryItems = new List<IInventoryItem>();
+    public List<IInventoryItem> inventoryItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> AddedToInventory;
 
-    public void AddItem(IInventoryItem item)
+    public void AddToInventory(IInventoryItem item)
     {
-        if (!inventoryItems.Contains(item))
-        {
-
-            inventoryItems.Add(item);
-
-            AddedToInventory?.Invoke(this, new InventoryEventArgs(item));
-        }
+        inventoryItems.Add(item);
     }
+
 }
