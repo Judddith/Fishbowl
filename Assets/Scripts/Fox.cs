@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fox : MonoBehaviour, IInventoryItem
 {
+    GameObject ObjectFox;
 
     public string Name 
     { 
@@ -25,8 +26,19 @@ public class Fox : MonoBehaviour, IInventoryItem
 
     public void OnPlacement()
     {
-        //Not yet important
-        //gameObject.SetActive(true);
+        
+        ObjectFox.SetActive(true);
+    }
+
+    
+    GameObject UserInv;
+
+    void Start()
+    {
+        UserInv = GameObject.Find("UserInventory");
+        UserInv.GetComponent<UserInventory>().AddToInventory(this);
+
+        ObjectFox = GameObject.Find("Fox");
     }
 
 }
