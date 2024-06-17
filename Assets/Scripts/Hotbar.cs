@@ -18,11 +18,11 @@ public class HUD : MonoBehaviour
     private void Inventory_ItemAdded(object sender, InventoryEventArgs e)
     {
         //Checking for an empty panel to add the asset to the Bowl Inventory
-        Transform inventoryPanel = transform.Find("Hotbar");
+        Transform inventoryPanel = transform.Find("InventoryPanel");
         foreach(Transform slot in inventoryPanel)
         {
             //Accurately setting the Sprite for the visual representation
-            Image image = slot.GetChild(0).GetComponent<Image>();
+            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
         
 
             //An empty slot was found
