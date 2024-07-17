@@ -469,8 +469,9 @@ GameObject:
   - component: {fileID: 763107507}
   - component: {fileID: 763107509}
   - component: {fileID: 763107508}
+  - component: {fileID: 763107510}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MainMenuPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -492,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.720581, y: 0}
+  m_AnchoredPosition: {x: -3.1768188, y: 0}
   m_SizeDelta: {x: -90.9911, y: -53.1383}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763107508
@@ -508,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.905495, b: 0.21226418, a: 0.7019608}
+  m_Color: {r: 0.41859987, g: 0, b: 0.546, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -533,6 +534,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763107506}
   m_CullTransparentMesh: 1
+--- !u!114 &763107510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763107506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1c41fdf1f56164bb37a4baba08884f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &974167266
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +558,7 @@ GameObject:
   - component: {fileID: 974167269}
   - component: {fileID: 974167268}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LifeBehindGlassGraphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: -84}
+  m_AnchoredPosition: {x: -288.99997, y: -57.630005}
   m_SizeDelta: {x: 641.3626, y: 410.9955}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974167268
@@ -590,7 +603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 368cbb737e6fd6540b175306140fa682, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9767631f18bd8744ebf6136908a27d28, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -621,7 +634,7 @@ GameObject:
   - component: {fileID: 1025477683}
   - component: {fileID: 1025477682}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SpielStartenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1025477683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763107510}
+        m_TargetAssemblyTypeName: MainMenuScene, Assembly-CSharp
+        m_MethodName: MainManuStartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1025477683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +767,7 @@ GameObject:
   - component: {fileID: 1063490988}
   - component: {fileID: 1063490987}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: WieFunktButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,7 +836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1063490988}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763107510}
+        m_TargetAssemblyTypeName: MainMenuScene, Assembly-CSharp
+        m_MethodName: MainManuOpenInfographic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1063490988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +900,7 @@ GameObject:
   - component: {fileID: 1483796288}
   - component: {fileID: 1483796287}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: DIYButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,7 +969,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483796288}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 763107510}
+        m_TargetAssemblyTypeName: MainMenuScene, Assembly-CSharp
+        m_MethodName: MainManuOpenDIY
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1483796288
 MonoBehaviour:
   m_ObjectHideFlags: 0

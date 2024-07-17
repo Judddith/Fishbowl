@@ -42,7 +42,7 @@ public class CameraMovement : MonoBehaviour
 
     // R-Key resets camera position
         if (Input.GetKeyDown(KeyCode.R)) {
-            transform.position = new Vector3(310, 40, 400);
+            //transform.position = new Vector3(310, 40, 400);
             //transform.rotation = Quaternion.Euler(18,0,0);
         }
     } 

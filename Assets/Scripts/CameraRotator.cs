@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class CameraRotator : MonoBehaviour
 {
+    public GameObject dome;
     public Camera camOutside;
     public Camera camInside;
-
-    public Camera cam;
     private Vector3 previousPosition;
-    public GameObject dome;
 
 
     // Start is called before the first frame update
@@ -56,9 +54,7 @@ public class CameraRotator : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Console.Write("camInside");
-                Vector3 direction = previousPosition - Camera.main.ScreenToViewportPoint(Input.mousePosition);
-
+                previousPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
             }
             if (Input.GetMouseButton(0))
