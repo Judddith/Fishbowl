@@ -5,13 +5,20 @@ using UnityEngine;
 
 
 //Standardaufbau aller vom Nutzer platzierbaren Objekte
-public class Item {
+public class Item : MonoBehaviour
+{
 
-    string Name { get; }
-    Sprite Image { get; }
+    string Name;
+    Sprite Image;
     GameObject ItemPrefab;
- 
-    
+
+    public interface IItem
+    {
+
+
+    }
+
+
 }
 
 
