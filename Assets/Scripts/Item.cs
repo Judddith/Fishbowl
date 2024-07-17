@@ -10,17 +10,7 @@ public class Item {
     string Name { get; }
     Sprite Image { get; }
     GameObject ItemPrefab;
-
-    //ItemPrefab = Name + "_Prefab"; 
-
-    void PlaceItem(List<Item> items) {
-        if (GameObject.Find(ItemPrefab) = null)
-        {
-            Instantiate(ItemPrefab, position, Quaternion.identity);
-            items.Add(Item);
-        }
-        
-    }
+ 
     
 }
 

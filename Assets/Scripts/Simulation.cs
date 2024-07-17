@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Simulation : MonoBehaviour
@@ -11,8 +12,11 @@ public class Simulation : MonoBehaviour
     public bool addedNewAsset;
     public bool failedOnce;
 
-    ItemsSpawned itemsSpawned;
+    
 
+    
+    
+    
 
     public void AddPoints(int points) 
     {
@@ -28,13 +32,13 @@ public class Simulation : MonoBehaviour
         }
     }
 
-    public void checkStage()
+    public void CheckStage()
     {
-        if(simulationPoints = 0 && failedOnce)
+        if (simulationPoints == 0 && failedOnce == true)
         {
             stage = 2;
         }
-        else if(simulationPoints <= 5 && failedOnce == false)
+        else if (simulationPoints <= 5 && failedOnce == false)
         {
             stage = 1;
         }
@@ -43,24 +47,5 @@ public class Simulation : MonoBehaviour
             stage = 0;
         }
     }
-
-    void Start()
-    {
-        itemsSpawned = FindObejctOfType<ItemsInBowl>();
-
-        if (itemsSpawned != null)
-        {
-            public List<Item> items = itemsSpawned.ItemsSpawned;
-            Debug.Log("Access successfull")
-        }
-    }
-
-    public void checkList() 
-    {
-        foreach(Item item in items)
-        {
-            Debug.Log(item.Name);
-        }
-    }
-
+   
 }
