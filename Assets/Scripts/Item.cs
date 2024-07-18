@@ -8,16 +8,17 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    string Name;
-    Sprite Image;
-    GameObject ItemPrefab;
+    string Name {get;}
+    Vector3 Position {get;}
+    GameObject Object {get;}
 
-    public interface IItem
-    {
-
-
+    void animate(){
+        //Animationen hier hinzufuegen
     }
 
+    void Start() {
+        Debug.Log(Name + ";" + Position + ";" + Object);
+    }
 
 }
 
