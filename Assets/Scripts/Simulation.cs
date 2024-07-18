@@ -15,6 +15,7 @@ public class Simulation : MonoBehaviour
     public int assetsToUnlock = 9; //Needs to be changed according to the number of unlockable assets.
 
     //Placeholder
+    //TODO Look put tree/set instead of List
     List<Item> ListOfItems = new List<Item>();
     //Delete later
 
@@ -94,7 +95,7 @@ public class Simulation : MonoBehaviour
         CheckStage();
 
         //If the player failed once a new Asset will be unlocked
-        if (!failedOnce && assetsToUnlock > 0 && addedNewAsset == false) {
+        if (failedOnce && assetsToUnlock > 0 && addedNewAsset == false) {
             UnlockNewAsset();
         }
 
