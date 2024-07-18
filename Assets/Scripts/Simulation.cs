@@ -64,6 +64,9 @@ public class Simulation : MonoBehaviour
 
     }
 
+/// <summary>
+/// TO-DO: CalculatePoints needs to be added to the Start Button
+/// </summary>
 
     //Calculates Points for all items in the Bowl
     public void CalculatePoints() {
