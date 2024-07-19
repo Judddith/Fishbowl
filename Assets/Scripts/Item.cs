@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
     //GameObject Stage1 = Unity.FindGameObject();
     //ObjectName + Stage
 
-    Simulation = GameObject.Find().GetComponent<Simulation>();
+    //Simulation = GameObject.Find().GetComponent<Simulation>();
     void animate(){
         //Animationen hier hinzufuegen
     }
