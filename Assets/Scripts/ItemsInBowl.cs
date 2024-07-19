@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemsInBowl : MonoBehaviour
 {
-    public List<Item> ItemsSpawned = new();
+    public List<GameObject> ItemsSpawned = new();
 }

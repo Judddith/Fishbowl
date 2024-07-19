@@ -8,24 +8,31 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    string Name {get;}
-    Vector3 Position {get;}
-    GameObject Object {get;}
+    public string name;
+    public Vector3 Position;
+    public GameObject Stage1;
+    public GameObject Stage2;
+    public GameObject Stage3;
 
-    //GameObject Stage1 = Unity.FindGameObject();
-    //ObjectName + Stage
+    
 
-    //Simulation = GameObject.Find().GetComponent<Simulation>();
-    void animate(){
+    void Animate()
+    {
         //Animationen hier hinzufuegen
     }
 
-    void Start() {
-        Debug.Log(Name + ";" + Position + ";" + Object);
-        Object.setActive(false);
+    void Start()
+    {
+        name = Stage1.name;
+        Stage2 = GameObject.Find(name + "2");
+        Debug.Log(Stage2);
+        Position = Stage1.transform.position;
+        Debug.Log(name + ";" + Position + ";" + Stage1);
+        Stage1.SetActive(false); //deactivates asset in bowl
     }
 
-    void Change(){
+    void Change()
+    {
 
     }
 }
