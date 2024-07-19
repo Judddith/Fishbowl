@@ -6,7 +6,7 @@ using UnityEngine;
 public class Simulation : MonoBehaviour
 {
 
-
+    GameObject Button {get;}
     public int simulationPoints;
     public int stage;
     public bool addedNewAsset;

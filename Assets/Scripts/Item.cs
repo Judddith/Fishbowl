@@ -11,15 +11,18 @@ public class Item : MonoBehaviour
     string Name {get;}
     Vector3 Position {get;}
     GameObject Object {get;}
+
     //GameObject Stage1 = Unity.FindGameObject();
     //ObjectName + Stage
 
+    Simulation = GameObject.Find().GetComponent<Simulation>();
     void animate(){
         //Animationen hier hinzufuegen
     }
 
     void Start() {
         Debug.Log(Name + ";" + Position + ";" + Object);
+        Object.setActive(false);
     }
 
     void Change(){
