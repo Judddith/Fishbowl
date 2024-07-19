@@ -6,7 +6,8 @@ using UnityEngine;
 public class Simulation : MonoBehaviour
 {
 
-    GameObject Button {get;}
+    public GameObject button;
+    public GameObject bowl;
     public int simulationPoints;
     public int stage;
     public bool addedNewAsset;
@@ -14,10 +15,17 @@ public class Simulation : MonoBehaviour
     public int amountOfAssets = 10; // Placeholder, should be calculated based on the number of placeable assets.
     public int assetsToUnlock = 9; //Needs to be changed according to the number of unlockable assets.
 
-    //Placeholder
-    //TODO Look put tree/set instead of List
-    List<Item> ListOfItems = new List<Item>();
-    //Delete later
+    public List<GameObject> ListOfItems;
+
+    void Start() {
+        stage = 0;
+
+        button = this.gameObject;
+        ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned;
+
+        
+    }
+
 
     public void AddPoints(int points) 
     {

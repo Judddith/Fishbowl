@@ -10,9 +10,7 @@ public class Item : MonoBehaviour
 
     public string name;
     public Vector3 Position;
-    public GameObject Stage1;
-    public GameObject Stage2;
-    public GameObject Stage3;
+    public GameObject item;
 
     
 
@@ -23,18 +21,15 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        name = Stage1.name;
-        Stage2 = GameObject.Find(name + "2");
-        Debug.Log(Stage2);
-        Position = Stage1.transform.position;
-        Debug.Log(name + ";" + Position + ";" + Stage1);
-        Stage1.SetActive(false); //deactivates asset in bowl
+        item = this.gameObject;
+        name = item.name;
+        //Stage2 = GameObject.Find(name + "2");
+        //Debug.Log(Stage2);
+        Position = item.transform.position;
+        Debug.Log(name + ";" + Position + ";" + item);
+        item.SetActive(false); //deactivates asset in bowl
     }
 
-    void Change()
-    {
-
-    }
 }
 
 

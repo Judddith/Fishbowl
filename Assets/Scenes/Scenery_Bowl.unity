@@ -1841,9 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   Position: {x: 0, y: 0, z: 0}
-  Stage1: {fileID: 696112976}
-  Stage2: {fileID: 0}
-  Stage3: {fileID: 0}
+  item: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
