@@ -31,17 +31,19 @@ public class Simulation : MonoBehaviour
     public void AddPoints(int points) 
     {
         simulationPoints += points;
-        Debug.Log("Point was added");
+        //Debug.Log("Point was added");
     }
 
     public void RemovePoints(int points)
     {
         simulationPoints -= points;
+        //Debug.Log(points);
+        //Debug.Log(simulationPoints);
         if (simulationPoints < 0)
         {
             simulationPoints = 0;
         }
-        Debug.Log("Points were removed");
+        //Debug.Log("Points were removed");
     }
 
     //Checks wether or not the next stage is reached
@@ -90,10 +92,12 @@ public class Simulation : MonoBehaviour
             AddPoints(1);
             //Debug.Log(item);
         }
+    	Debug.Log($"Current Points: {simulationPoints}");
+
 
         //If the player didn't use all assets points will be subtracted so the player can't win without using all assets
         if (amountOfAssets > ListOfItems.Count){
-            //RemovePoints(ListOfItems.Count - amountOfAssets);
+            RemovePoints(amountOfAssets - ListOfItems.Count);
             if (simulationPoints < 0) {
                 simulationPoints = 0;
             }
