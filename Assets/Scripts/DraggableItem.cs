@@ -18,6 +18,14 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public List<Item> itemsInBowl;
     public Transform parentButton;
 
+    public void Start() {
+        image = this.GetComponent<Image>();
+        
+        bowl = GameObject.Find("GlassDome");
+        playerCamera = GameObject.Find("MainCameraOutside").GetComponent<Camera>();
+
+        //Debug.Log($"{image}, {bowl}, {playerCamera}, {draggedObject}");
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
