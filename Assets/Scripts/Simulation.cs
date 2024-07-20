@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Simulation : MonoBehaviour
 {
@@ -15,9 +15,10 @@ public class Simulation : MonoBehaviour
     public bool addedNewAsset;
     public bool failedOnce;
     public int amountOfAssets = 7; // Placeholder, should be calculated based on the number of placeable assets.
-    public int assetsToUnlock = 6; //Needs to be changed according to the number of unlockable assets.
+    public int assetsToUnlock; //Needs to be changed according to the number of unlockable assets.
 
     public List<GameObject> ListOfItems;
+    public List<GameObject> unlockableItems;
 
     void Start() {
         stage = 0;
@@ -25,6 +26,12 @@ public class Simulation : MonoBehaviour
         button = this.gameObject;
         ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned; //Liste muss vielleicht immer geupdatet werden, wenn ein Item hinzugefügt wurde
         
+        foreach (var image in unlockableItems) {
+            image.GetComponent<Image>().raycastTarget = false;  //deactivate raycast target for unlockable items
+        }
+        //Führe UnlockAsset 2 mal durch um Assets zum starten zu haben
+        UnlockNewAsset();
+        UnlockNewAsset(); //Unsauber aber funktioniert
     }
 
 
@@ -72,11 +79,12 @@ public class Simulation : MonoBehaviour
 
     //Unlocks New Assets when criteria are met 
     public void UnlockNewAsset() {
-
+        
         //Hier kommt der Code rein, um neue Assets freizuschalten
-        assetsToUnlock -= 1;
-
-
+        
+        unlockableItems[0].GetComponent<Image>().raycastTarget = true;
+        unlockableItems.RemoveAt(0);
+        assetsToUnlock = unlockableItems.Count;
     }
 
 /// <summary>
