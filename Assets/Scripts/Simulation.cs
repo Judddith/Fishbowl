@@ -12,8 +12,8 @@ public class Simulation : MonoBehaviour
     public int stage;
     public bool addedNewAsset;
     public bool failedOnce;
-    public int amountOfAssets = 10; // Placeholder, should be calculated based on the number of placeable assets.
-    public int assetsToUnlock = 9; //Needs to be changed according to the number of unlockable assets.
+    public int amountOfAssets = 7; // Placeholder, should be calculated based on the number of placeable assets.
+    public int assetsToUnlock = 6; //Needs to be changed according to the number of unlockable assets.
 
     public List<GameObject> ListOfItems;
 
@@ -21,8 +21,7 @@ public class Simulation : MonoBehaviour
         stage = 0;
 
         button = this.gameObject;
-        ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned;
-
+        ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned; //Liste muss vielleicht immer geupdatet werden, wenn ein Item hinzugefügt wurde
         
     }
 
@@ -79,6 +78,7 @@ public class Simulation : MonoBehaviour
 
     //Calculates Points for all items in the Bowl
     public void CalculatePoints() {
+        ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned;
 
         //Loop through List of Items and add 1 point to simulationPoints for each item
         foreach (var item in ListOfItems) {
