@@ -16,10 +16,12 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public GameObject bowl;
     public Camera playerCamera;
     public List<Item> itemsInBowl;
+    public Transform parentButton;
 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        parentButton = transform.parent;
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -59,6 +61,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         if (bowl.GetComponent<ItemsInBowl>().ItemsSpawned.Contains(draggedObject))
         {
             image.raycastTarget = false;
+            //parentButton.GetComponent<Button>().transform;
         }
     }
 

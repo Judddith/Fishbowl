@@ -78,6 +78,7 @@ public class Simulation : MonoBehaviour
 
     //Calculates Points for all items in the Bowl
     public void CalculatePoints() {
+        Debug.Log("Method CalculatePoints");
         ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned;
 
         //Loop through List of Items and add 1 point to simulationPoints for each item
