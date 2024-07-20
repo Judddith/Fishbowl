@@ -13,8 +13,16 @@ public class Plant_stage1 : Item
 
 
     public int stage; //current stage of simulation
-
-
+    public int _stage;
+    void Start() {
+        stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
+    }
+    void Update() {
+        if(stage!= _stage) {
+            ChangePlant();
+            _stage = stage;
+        }
+    }
     
     void ChangePlant() {
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : Item
+public class Plant_stage0 : Item
 {
 
     //When the plant is healthy and doing fine. Stage 0 of the simulation
@@ -13,11 +13,20 @@ public class Plant : Item
 
 
     public int stage; //current stage of simulation
+    private int _stage;
 
-
+    void Start() {
+        stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
+    }
+    void Update() {
+        if(stage!= _stage) {
+            ChangePlant();
+            _stage = stage;
+        }
+    }
     
     void ChangePlant() {
-
+        Debug.Log($"ChangePlant sagt wir haben {stage}");
         //stage = button.GetComponent<Simulation>().stage;
         if (stage == 0) {
             plant_stage1.SetActive(false);

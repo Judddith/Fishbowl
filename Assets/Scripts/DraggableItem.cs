@@ -54,7 +54,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("erste IF");
+            //Debug.Log("erste IF");
             if (hit.collider.CompareTag("bowl"))
             {
                 Debug.Log("hit bowl!");

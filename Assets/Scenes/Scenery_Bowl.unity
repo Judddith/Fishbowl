@@ -3858,8 +3858,8 @@ MonoBehaviour:
   stage: 0
   addedNewAsset: 0
   failedOnce: 0
-  amountOfAssets: 10
-  assetsToUnlock: 9
+  amountOfAssets: 7
+  assetsToUnlock: 6
   ListOfItems: []
 --- !u!1001 &1500901982
 PrefabInstance:

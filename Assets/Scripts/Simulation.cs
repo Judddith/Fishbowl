@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -29,6 +31,7 @@ public class Simulation : MonoBehaviour
     public void AddPoints(int points) 
     {
         simulationPoints += points;
+        Debug.Log("Point was added");
     }
 
     public void RemovePoints(int points)
@@ -38,6 +41,7 @@ public class Simulation : MonoBehaviour
         {
             simulationPoints = 0;
         }
+        Debug.Log("Points were removed");
     }
 
     //Checks wether or not the next stage is reached
@@ -60,6 +64,7 @@ public class Simulation : MonoBehaviour
             simulationPoints = 0;
             failedOnce = false;
         }
+        Debug.Log("Stage changed");
     }
 
 
@@ -79,16 +84,16 @@ public class Simulation : MonoBehaviour
     //Calculates Points for all items in the Bowl
     public void CalculatePoints() {
         Debug.Log("Method CalculatePoints");
-        ListOfItems = bowl.GetComponent<ItemsInBowl>().ItemsSpawned;
 
         //Loop through List of Items and add 1 point to simulationPoints for each item
         foreach (var item in ListOfItems) {
             AddPoints(1);
+            //Debug.Log(item);
         }
 
         //If the player didn't use all assets points will be subtracted so the player can't win without using all assets
         if (amountOfAssets > ListOfItems.Count){
-            RemovePoints(ListOfItems.Count - amountOfAssets);
+            //RemovePoints(ListOfItems.Count - amountOfAssets);
             if (simulationPoints < 0) {
                 simulationPoints = 0;
             }
@@ -100,7 +105,7 @@ public class Simulation : MonoBehaviour
         if (addedNewAsset) {
             failedOnce = false;
         }
-
+        Debug.Log($"Points calculated: {simulationPoints}");
         CheckStage();
 
         //If the player failed once a new Asset will be unlocked
@@ -108,7 +113,7 @@ public class Simulation : MonoBehaviour
             UnlockNewAsset();
         }
 
-
+        
     }
    
 }

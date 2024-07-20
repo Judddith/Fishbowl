@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
         //Stage2 = GameObject.Find(name + "2");
         //Debug.Log(Stage2);
         Position = item.transform.position;
-        Debug.Log(name + ";" + Position + ";" + item);
+        //Debug.Log(name + ";" + Position + ";" + item);
         item.SetActive(false); //deactivates asset in bowl
     }
 
