@@ -30,6 +30,15 @@ public class Item : MonoBehaviour
         //item.SetActive(false); //deactivates asset in bowl
     }
 
+    void AmIInList() {
+        if(GameObject.Find("GlassDome").GetComponent<ItemsInBowl>().ItemsSpawned.Contains(Item)){
+            Debug.Log("Good Job! You are allowed to be here");
+        }
+        else {
+            item.SetActive(false);
+        }
+    }
+
 }
 
 

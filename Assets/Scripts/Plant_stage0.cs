@@ -48,6 +48,7 @@ public class Plant_stage0 : Item
         else {
             Debug.Log("Keine Bedingung ist erfüllt"); //if stage is not 0, 1 or 2, do nothing
         }
+        AmIInList();
     }
     
 }
