@@ -157,7 +157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Der Badische Riesenregenwurm
+  m_text: Der Fuchs (Fleischfresser)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -253,15 +253,15 @@ RectTransform:
   m_GameObject: {fileID: 6656974085225461368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.3125, y: 11.3125, z: 11.3125}
+  m_LocalScale: {x: 4.11, y: 4.11, z: 4.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 340269297281899068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -584.5, y: -145.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 858, y: -349}
+  m_SizeDelta: {x: 138.3161, y: 138.3161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4755791386267706016
 CanvasRenderer:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95c951609e0917041abbc7f4311928a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fce0ca344d9588a4c9097d14238f4712, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -335,8 +335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: -100, y: -200}
+  m_AnchoredPosition: {x: -139.30003, y: -50}
+  m_SizeDelta: {x: -378.59998, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3447488528687716213
 CanvasRenderer:
@@ -366,19 +366,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Der Badische Riesenregenwurm ist ein spannendes Tier, das im Schwarzwald
-    lebt und eine wichtige Aufgabe im Wald hat. Er kann bis zu 60 Zentimeter lang
-    werden und ist damit einer der gr\xF6\xDFten Regenw\xFCrmer in Europa \u2013
-    ein echter Riese unter den Regenw\xFCrmern!\r\n\nDiese gro\xDFen W\xFCrmer graben
-    tiefe Tunnel in den Waldboden. Diese Tunnel helfen dabei, dass Luft und Wasser
-    besser in den Boden kommen, was den Pflanzen hilft, besser zu wachsen.\r\n\nAber
-    das ist noch nicht alles! W\xE4hrend der Regenwurm gr\xE4bt und frisst, zersetzt
-    er abgestorbene Pflanzen. Dabei entstehen wichtige N\xE4hrstoffe wie Stickstoff
-    und Phosphor, die der Boden braucht, um gesund zu bleiben. Seine \"Wurmkacke\"
-    \u2013 auch Wurmhumus genannt \u2013 ist besonders gut f\xFCr den Boden, weil
-    sie viele n\xFCtzliche Stoffe enth\xE4lt.\r\n\nInsgesamt hilft der Badische Riesenregenwurm
-    dabei, dass der Waldboden gesund und fruchtbar bleibt, damit die Pflanzen gut
-    wachsen k\xF6nnen.\r\n"
+  m_text: "Der Fuchs ist ein schlaues und wichtiges Tier in der Natur. Er hilft,
+    das Gleichgewicht im Wald und auf den Wiesen zu halten. F\xFCchse fressen kleine
+    Tiere wie M\xE4use und Kaninchen, was verhindert, dass diese zu viele werden
+    und die Pflanzen kaputt machen. Au\xDFerdem fressen sie auch tote Tiere, was
+    daf\xFCr sorgt, dass der Wald sauber bleibt und sich keine Krankheiten ausbreiten.\r\n\nF\xFCchse
+    sind sehr schlau und gute J\xE4ger. Sie k\xF6nnen ihre Beute austricksen und
+    haben einen super Geruchssinn, der ihnen hilft, Essen zu finden und Gefahren
+    zu meiden. Und wusstest du, dass viele Fuchspaare ein Leben lang zusammenbleiben
+    und gemeinsam ihre Jungen aufziehen? \r\n\nInsgesamt sorgt der Fuchs daf\xFCr,
+    dass die Natur im Gleichgewicht bleibt und dass andere Tiere und Pflanzen gut
+    leben k\xF6nnen.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -405,8 +403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.5
-  m_fontSizeBase: 39.5
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -441,7 +439,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 197.43628, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
