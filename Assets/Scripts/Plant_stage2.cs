@@ -17,7 +17,7 @@ public class Plant_stage2 : Item
 
     void Start() {
         stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
-        button.AddEventListener("click", ChangePlant);
+        //button.AddEventListener("click", ChangePlant);
         item.SetActive(false);
     }
     void Update() {
@@ -28,7 +28,7 @@ public class Plant_stage2 : Item
         }*/
     }
     
-    void ChangePlant() {
+    public void ChangePlant() {
 
         //stage = button.GetComponent<Simulation>().stage;
         if (GameObject.Find("StartButton").GetComponent<Simulation>().stage == 0) {
