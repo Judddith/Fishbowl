@@ -17,15 +17,15 @@ public class Plant_stage2 : Item
 
     void Start() {
         stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
-  
+        button.AddEventListener("click", ChangePlant);
         item.SetActive(false);
     }
     void Update() {
-        stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
+        /*stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
         if(stage!= GameObject.Find("StartButton").GetComponent<Simulation>().stage) {
             ChangePlant();
             stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
-        }
+        }*/
     }
     
     void ChangePlant() {
