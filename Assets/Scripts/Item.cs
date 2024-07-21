@@ -8,7 +8,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public string name;
+    public string itemName;
     public Vector3 Position;
     public GameObject item;
 
@@ -22,7 +22,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         item = this.gameObject;
-        name = item.name;
+        itemName = item.name;
         //Stage2 = GameObject.Find(name + "2");
         //Debug.Log(Stage2);
         Position = item.transform.position;
