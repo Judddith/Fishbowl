@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip drop;
 
     private void Start()
-    {     
+    {
+        
         musicSource.clip = ambience;
         musicSource.Play();
     }
@@ -24,4 +26,5 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
+
 }

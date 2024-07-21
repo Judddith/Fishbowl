@@ -10,17 +10,25 @@ using Unity.VisualScripting;
 //Drag and drop handler
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public Transform parentAfterDrag;
     public Image image;
     public GameObject draggedObject;
     public GameObject bowl;
     public Camera playerCamera;
+    AudioManager audioManager;
+    public GameObject invSlotLeft;
+    Transform parentAfterDrag;
+    Transform parentButton;
     public List<Item> itemsInBowl;
-    public Transform parentButton;
+
+    public void Start() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        invSlotLeft.SetActive(false);
+    }
 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+
         parentButton = transform.parent;
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
@@ -28,6 +36,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         transform.SetAsLastSibling(); //display the dragged object over other objects
         image.raycastTarget = false; //makes object invisible for mouse input, object under mouse would be image otherwise
         bowl.GetComponent<CameraRotator>().enabled = false; //disable camera movement while dragging
+        audioManager.PlaySFX(audioManager.drag);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -40,9 +49,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     {
         Debug.Log("End drag");
 
+
         bowl.GetComponent<CameraRotator>().enabled = true; //enable camera movement after dragging
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        audioManager.PlaySFX(audioManager.drop);
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -61,6 +72,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         if (bowl.GetComponent<ItemsInBowl>().ItemsSpawned.Contains(draggedObject))
         {
             image.raycastTarget = false;
+            invSlotLeft.SetActive(true);
             //parentButton.GetComponent<Button>().transform;
         }
     }
