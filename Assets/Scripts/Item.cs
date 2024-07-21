@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
     public Vector3 Position;
     public GameObject item;
 
-    
+
 
     void Animate()
     {
@@ -27,7 +27,7 @@ public class Item : MonoBehaviour
         //Debug.Log(Stage2);
         Position = item.transform.position;
         //Debug.Log(name + ";" + Position + ";" + item);
-        item.SetActive(false); //deactivates asset in bowl
+        //item.SetActive(false); //deactivates asset in bowl
     }
 
 }

@@ -13,32 +13,34 @@ public class Plant_stage0 : Item
 
 
     public int stage; //current stage of simulation
-    private int _stage;
+  
 
     void Start() {
         stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
+        
     }
     void Update() {
-        stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
-        if(stage!= _stage) {
+        if(stage!= GameObject.Find("StartButton").GetComponent<Simulation>().stage) {
             ChangePlant();
-            _stage = stage;
+            stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
         }
     }
+
+    
     
     void ChangePlant() {
         Debug.Log($"ChangePlant sagt wir haben {stage}");
         //stage = button.GetComponent<Simulation>().stage;
-        if (stage == 0) {
+        if (GameObject.Find("StartButton").GetComponent<Simulation>().stage == 0) {
             plant_stage1.SetActive(false);
             plant_stage2.SetActive(false);
         }
-        else if (stage == 1) {
+        else if (GameObject.Find("StartButton").GetComponent<Simulation>().stage == 1) {
             plant_stage1.SetActive(true);
             plant_stage2.SetActive(false);
             item.SetActive(false);
         }
-        else if (stage == 2) {
+        else if (GameObject.Find("StartButton").GetComponent<Simulation>().stage == 2) {
             plant_stage1.SetActive(false);
             plant_stage2.SetActive(true);
             item.SetActive(false);
