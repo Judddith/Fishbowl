@@ -14,29 +14,30 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public GameObject draggedObject;
     public GameObject bowl;
     public Camera playerCamera;
-    public List<Item> itemsInBowl;
-
-    AudioManager audioManager;
+    public Button parentButton;
     public GameObject invSlotLeft;
+
+    public List<Item> itemsInBowl;
+    AudioManager audioManager;
     Transform parentAfterDrag;
-    Transform parentButton;
 
 
     public void Start() {
 
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         invSlotLeft.SetActive(false);
-
+        draggedObject.SetActive(false);
         image = this.GetComponent<Image>();    
         bowl = GameObject.Find("GlassDome");
         playerCamera = GameObject.Find("MainCameraOutside").GetComponent<Camera>();
-
+        image.raycastTarget = true;
+        Debug.Log("Test");
         //Debug.Log($"{image}, {bowl}, {playerCamera}, {draggedObject}");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentButton = transform.parent;
+        //parentButton = this.parent;
         Debug.Log("Begin drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -77,9 +78,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
 
         if (bowl.GetComponent<ItemsInBowl>().ItemsSpawned.Contains(draggedObject))
         {
+            Debug.Log("raycast = false");
             image.raycastTarget = false;
             invSlotLeft.SetActive(true);
-            //parentButton.GetComponent<Button>().transform;
+            parentButton.interactable = false;
+            
         }
     }
 
