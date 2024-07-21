@@ -10,6 +10,8 @@ public class Simulation : MonoBehaviour
 
     public GameObject button;
     public GameObject bowl;
+    public GameObject failure;
+    public GameObject success;
     public int simulationPoints;
     public int stage;
     public bool addedNewAsset;
@@ -60,6 +62,8 @@ public class Simulation : MonoBehaviour
         {
             stage = 2;
             simulationPoints = 0;
+
+            failure.SetActive(true);
         }
         else if (simulationPoints <= amountOfAssets/2 && failedOnce == false)
         {
@@ -85,6 +89,10 @@ public class Simulation : MonoBehaviour
         unlockableItems[0].GetComponent<Image>().raycastTarget = true;
         unlockableItems.RemoveAt(0);
         assetsToUnlock = unlockableItems.Count;
+
+        if(assetsToUnlock == 0) {
+            success.SetActive(true);
+        }
     }
 
 /// <summary>
@@ -116,6 +124,7 @@ public class Simulation : MonoBehaviour
         //Needs to be set true by adding a new asset to the ListOfItems
         if (addedNewAsset) {
             failedOnce = false;
+            addedNewAsset = false;
         }
         Debug.Log($"Points calculated: {simulationPoints}");
         CheckStage();

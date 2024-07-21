@@ -16,6 +16,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public Camera playerCamera;
     public Button parentButton;
     public GameObject invSlotLeft;
+    public GameObject startButton;
 
     public List<Item> itemsInBowl;
     AudioManager audioManager;
@@ -29,6 +30,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         draggedObject.SetActive(false);
         image = this.GetComponent<Image>();    
         bowl = GameObject.Find("GlassDome");
+        startButton = GameObject.Find("StartButton");
         playerCamera = GameObject.Find("MainCameraOutside").GetComponent<Camera>();
         image.raycastTarget = true;
         Debug.Log("Test");
@@ -70,6 +72,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
                 Debug.Log("hit bowl!");
                 draggedObject.SetActive(true);
                 bowl.GetComponent<ItemsInBowl>().ItemsSpawned.Add(draggedObject); //adds active dragged item to item list
+                startButton.GetComponent<Simulation>().addedNewAsset = true;
             }
         }
 
