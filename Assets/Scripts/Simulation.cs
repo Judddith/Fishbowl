@@ -121,9 +121,9 @@ public class Simulation : MonoBehaviour
         CheckStage();
 
         //If the player failed once a new Asset will be unlocked
-        if (failedOnce && assetsToUnlock > 0 && addedNewAsset == false) {
-            UnlockNewAsset();
-        }
+        //if (failedOnce && assetsToUnlock > 0 && addedNewAsset == false) {
+        UnlockNewAsset();
+        //}
 
         
     }
