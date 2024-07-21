@@ -19,6 +19,7 @@ public class Plant_stage2 : Item
         stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
     }
     void Update() {
+        stage = GameObject.Find("StartButton").GetComponent<Simulation>().stage;
         if(stage!= _stage) {
             ChangePlant();
             _stage = stage;
